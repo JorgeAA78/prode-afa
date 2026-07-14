@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulario interactivo de Prode de la Asociación del Fútbol Argentino (AFA). Ingresá y enviá tus predicciones de los partidos más importantes.">
+    <meta name="author" content="AFA Prode Developer">
+    <title>Prode AFA - Predicciones de Fútbol Argentino</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Favicon (Reference to AFA Logo) -->
+    <link rel="icon" type="image/png" href="assets/img/afa.png">
+</head>
+<body>
+
+    <main class="app-container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="brand-row">
+                <div class="logo-container" id="afa-logo-container">
+                    <img src="assets/img/afa.png" alt="Escudo AFA" id="afa-logo-img">
+                </div>
+                <div class="avatar-container" id="tournament-badge-container">
+                    <img src="assets/img/tournament.png" alt="Escudo de Torneo" id="tournament-badge-img">
+                </div>
+            </div>
+            <div class="stars-row" id="stars-row-decoration">⭐️ ⭐️ ⭐️</div>
+            <h1 id="app-main-title">Prode AFA</h1>
+            <p class="welcome-msg" id="welcome-message-container">
+                ¡Hola, <span id="welcome-user">Cargando...</span>! Dejá tus predicciones:
+            </p>
+        </header>
+
+        <!-- Dynamic Form -->
+        <form id="prode-form">
+            <!-- Matches list injected dynamically -->
+            <div class="matches-list" id="matches-container">
+                <!-- Fallback loading message if JavaScript is disabled -->
+                <p style="text-align: center; color: var(--text-secondary); padding: 2rem;">Cargando partidos...</p>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="submit-btn" class="submit-btn">
+                <div class="spinner" id="submit-spinner"></div>
+                <span id="submit-text">Enviar Mis Predicciones</span>
+            </button>
+        </form>
+    </main>
+
+    <!-- Success Modal Overlay -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-card" id="success-modal-card">
+            <div class="modal-icon" id="success-modal-icon">🏆</div>
+            <h2 class="modal-title" id="success-modal-title">¡Predicciones Guardadas!</h2>
+            <p class="modal-text" id="success-modal-description">
+                ¡Muchas gracias, <strong id="modal-user">Usuario</strong>!<br>
+                Tus predicciones han sido enviadas correctamente al sistema de la AFA a través de n8n. ¡Muchos éxitos en la fecha!
+            </p>
+            <button type="button" class="modal-btn" id="close-modal-btn">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Application Script -->
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
