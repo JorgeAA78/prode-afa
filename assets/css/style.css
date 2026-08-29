@@ -571,3 +571,15 @@ h1 {
         bottom: 1rem;
     }
 }
+
+.team-badge {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.match-time {
+    font-size: .75rem;
+    color: var(--text-secondary);
+    margin-bottom: .5rem;
+}
